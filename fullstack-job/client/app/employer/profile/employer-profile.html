@@ -1,0 +1,62 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div id="jobs" class ="container-fluid">
+	<div class="container-fluid">
+		<div class="col-xs-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">Company Profile</div>
+				<div class="panel-body">
+					<form name="form" novalidate>
+						<dt>Name</dt>
+            			<input type="name" id="name" name="name" class="form-control" placeholder="Enter name" ng-model="employerProfileCtrl.user._employerProfile.companyname" required>
+            		</form>
+            		<button ng-click="employerProfileCtrl.update(form)" class="btn btn-primary" type="submit">Update</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xs-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">Posted Job</div>
+				<div class="panel-body">
+					<!-- Table -->
+	          		<div class="table-responsive">
+	          			<table class="table table-bordered table-striped table-hover table-condensed">
+	          				<thead>
+	          					<tr>
+	          						<th>
+	          							Job Name
+	          						</th>
+	          						<th>
+	          							Salary
+	          						</th>
+	          						<th>
+	          							Company
+	          						</th>
+	          						<th>
+	          							Benefits
+	          						</th>
+	          						<th>
+	          							Post Date
+	          						</th>
+	          					</tr>
+	          				</thead>
+	          				<tbody>
+	          					<tr ui-sref="jobdetail({jobId: job._id})" ng-repeat="job in employerProfileCtrl.jobs">
+	          						<td ng-bind="job.jobname"></td>
+	          						<td ng-bind="job.salary"></td>
+	          						<td ng-bind="job.email"></td>
+	          						<td ng-bind="job.benefits"></td>
+	          						<td ng-bind="job.createtime"></td>
+
+	          					</tr>
+	          				</tbody>
+	          			</table>
+	          		</div>
+
+				</div>
+			</div>
+			<pagination ng-if="employerProfileCtrl.pagination.numPages > 1" total-items="employerProfileCtrl.pagination.totalItems" ng-model="employerProfileCtrl.pagination.page" items-per-page="employerProfileCtrl.pagination.itemsPerPage" max-size="employerProfileCtrl.pagination.maxSize" boundary-links="{{employerProfileCtrl.pagination.numPages > 2}}" rotate="false" num-pages="employerProfileCtrl.pagination.numPages" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" ng-change="employerProfileCtrl.pageChanged()"></pagination>
+		</div>
+	</div>
+</div>

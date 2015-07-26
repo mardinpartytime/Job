@@ -1,0 +1,136 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div id="job" class ="container">
+  <div class="row">
+    <div class="col-md-9 col-sm-9">
+      <div class="content-section">
+        <div class="content-header">
+          <h4 class="job-feature-key">{{jobDetailCtrl.job.jobname}}</h4>
+          <p ><i class="fa fa-user"></i> by <span class="job-feature-key">{{jobDetailCtrl.job.companyname}}</span> -- {{jobDetailCtrl.job.district}} &nbsp; {{jobDetailCtrl.job.city}}
+          </p>
+        </div>
+        <hr>
+        <div class="content-body">
+          <a ng-href="{{jobDetailCtrl.job.applylink}}" target="_blank" class="btn btn-primary" ng-show="jobDetailCtrl.job.applylink != null"><i class="glyphicon glyphicon-send"></i> <strong>Apply on other website</strong></a>
+          <a ng-click="jobDetailCtrl.collect()" class="btn btn-default btn-padding"><i class="glyphicon glyphicon-heart-empty"></i> <strong>Save</strong></a>
+          <span class="pull-right">{{jobDetailCtrl.job.createtime | date:'yyyy-MM-dd'}} </span>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <div class="content-header">
+          <h5>Job Description</h5>
+        </div>
+        <hr class="hr-sub">
+        <div class="content-body">
+          <p ng-bind-html="jobDetailCtrl.job.description | nl2br"></p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <div class="content-header">
+          <h5>Company Info</h5>
+        </div>
+        <hr class="hr-sub">
+        <div class="content-body">
+          <div class="row">
+            <ul class="list-unstyled clearfix">
+              <li class="col-md-6">
+                <span class="job-feature-key">
+                  company name:
+                  <strong>{{jobDetailCtrl.job._employer._employerProfile.companyname}}</strong>
+                </span>
+              </li>
+              <li class="col-md-6">
+                <span class="job-feature-key">
+                  website:
+                  <strong>{{jobDetailCtrl.job._employer._employerProfile.website}}</strong>
+                </span>
+              </li>
+              <li class="col-md-6">
+                <span class="job-feature-key">
+                  headquarter:
+                  <strong>{{jobDetailCtrl.job._employer._employerProfile.address}}</strong>
+                </span>
+              </li>
+              <li class="col-md-6">
+                <span class="job-feature-key">
+                  size:
+                  <strong>{{jobDetailCtrl.job._employer._employerProfile.size}}</strong>
+                </span>
+              </li>
+              <li class="col-md-6">
+                <span class="job-feature-key">
+                  founded:
+                  <strong>{{jobDetailCtrl.job._employer._employerProfile.founded}}</strong>
+                </span>
+              </li>
+              <li class="col-md-6">
+                <span class="job-feature-key">
+                  revenue:
+                  <strong>{{jobDetailCtrl.job._employer._employerProfile.revenue}}</strong>
+                </span>
+              </li>
+              <li class="col-md-6">
+                <span class="job-feature-key">
+                  type:
+                  <strong>{{jobDetailCtrl.job._employer._employerProfile.type}}</strong>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!--     <div class="col-md-3 col-sm-3">
+      <div class="content-section">
+        <div class="content-header">
+            <h5>Jobs You May Like</h5>
+        </div>
+        <div class="content-body">
+          <div class="row">
+            <div class="col-xs-3 col-md-3 text-center">
+                        <img src="http://bootsnipp.com/apple-touch-icon-114x114-precomposed.png" alt="Easybuy" class="img-rounded img-responsive img-40px" />
+            </div>
+            <div class="col-xs-9 col-md-9 section-box">
+              <p class="header-5px"><a href="http://bootsnipp.com/" target="_blank"> Android Developer 
+              </a></p>
+              <p>
+                Easybuyxxxxxxxxx - Singapore
+              </p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-3 col-md-3 text-center">
+                        <img src="http://bootsnipp.com/apple-touch-icon-114x114-precomposed.png" alt="Easybuy" class="img-rounded img-responsive img-40px" />
+            </div>
+            <div class="col-xs-9 col-md-9 section-box">
+              <p class="header-5px"><a href="http://bootsnipp.com/" target="_blank"> Android Developer 
+              </a></p>
+              <p>
+                Easybuyxxxxxxxxx - Singapore
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="content-section">
+        <div class="content-header">
+            <h5>Excellent People In This Field</h5>
+        </div>
+        <div class="content-body">
+
+        </div>
+      </div>
+
+    </div>
+
+  </div> -->
+
+
+
+</div>

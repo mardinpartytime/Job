@@ -1,0 +1,103 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div id="jobs" class ="container">
+		<div class="row">
+
+               <div class="col-md-8 col-sm-8">
+                    <div id="postlist">
+                         <div class="panel" ng-repeat="job in viewJobsCtrl.jobs">
+                             <div class="panel-heading">
+                                 <div class="text-left">
+                                     <div class="row">
+                                         <div class="col-sm-9">
+                                             <h4 class="pull-left job-feature-key"><a ui-sref="jobdetail({jobId: job._id})" >{{job.jobname}}</a><br>{{job.companyname}} &nbsp; {{job.district}} {{job.city}}</h4>
+                                         </div>
+                                         <div class="col-sm-3">
+                                             <h4 class="pull-right">
+                                             <small><em>{{job.createtime | date:'yyyy-MM-dd'}}<br>{{job.createtime | date:'HH:mm:ss'}}</em></small>
+                                             </h4>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                               
+                             <div class="panel-body">
+                                 {{job.description | limitTo: 300}}... <a ui-sref="jobdetail({jobId: job._id})">Read more</a>
+                             </div>
+                             
+                             <div class="panel-footer">
+                                 <span class="label label-default">{{job.education}}</span> <span class="label label-default">experience:{{job.experienceyear}}</span> <span class="label label-default">{{job.wage}}</span>
+                                 <!--
+                                 <span class="label label-default">{{job.email}}</span>
+                                -->
+                             </div>
+                             <br>
+                         </div>
+                    </div>
+
+                    <pagination ng-if="viewJobsCtrl.pagination.numPages > 1" total-items="viewJobsCtrl.pagination.totalItems" ng-model="viewJobsCtrl.pagination.page" items-per-page="viewJobsCtrl.pagination.itemsPerPage" max-size="viewJobsCtrl.pagination.maxSize" boundary-links="{{viewJobsCtrl.pagination.numPages > 2}}" rotate="false" num-pages="viewJobsCtrl.pagination.numPages" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" ng-change="viewJobsCtrl.pageChanged()"></pagination>
+               </div>
+
+               <div class="col-md-4 col-sm-4">
+                    <button ui-sref="employer-add-job.step-1" class="btn btn-primary btn-add" type="submit" >Post a Job</button>
+
+<!--                     <button ui-sref="add-achievement" class="btn btn-primary btn-add" type="submit">Post an Achievement</button>
+                    <h4>Refine Results</h4>
+                    <h5>Freshness</h5> -->
+
+               </div>
+
+               <!--
+			<div class="col-xs-12">
+			</div>
+
+               <div class="btn-container text-right">
+                    <button ui-sref="employer-add-job.step-1" class="btn btn-default btn-add" type="submit">Post a Job</button>
+                </div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+            		<h3 class="panel-title">Job Listing</h3>
+          		</div>
+
+          		
+          		<div class="table-responsive">
+          			<table class="table table-bordered table-striped table-hover table-condensed">
+          				<thead>
+          					<tr>
+          						<th>
+          							Job Name
+          						</th>
+          						<th>
+          							Salary
+          						</th>
+          						<th>
+          							Company
+          						</th>
+          						<th>
+          							Benefits
+          						</th>
+          						<th>
+          							Post Date
+          						</th>
+          					</tr>
+          				</thead>
+          				<tbody>
+          					<tr ui-sref="jobdetail({jobId: job._id})" ng-repeat="job in viewJobsCtrl.jobs">
+          						<td ng-bind="job.jobname"></td>
+          						<td ng-bind="job.salary"></td>
+          						<td ng-bind="job.email"></td>
+          						<td ng-bind="job.benefits"></td>
+          						<td ng-bind="job.createtime"></td>
+
+          					</tr>
+          				</tbody>
+          			</table>
+          		</div>
+			</div>
+               -->
+
+               
+		</div><!-- end of row-->
+
+</div>

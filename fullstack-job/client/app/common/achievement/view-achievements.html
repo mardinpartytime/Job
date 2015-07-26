@@ -1,0 +1,57 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div id="achievements" class ="container">
+	<div class="row">
+		<div class="col-md-8 col-sm-8">
+			<div id="postlist">
+				<div class="well" ng-repeat="achievement in viewAchievementsCtrl.achievements">
+					<div class="media">
+						<a class="pull-left" href="#">
+	    					<img class="media-object img-head" src="http://jimdo.wpengine.com/wp-content/uploads/2014/01/tree-247122.jpg">
+	  					</a>
+	  					<div class="media-body">
+	  						<p class="text-right">By {{achievement._user.name}}</p>
+	  						<p>{{achievement.description}}</p>
+							<ul class="list-inline list-unstyled">
+								<li><span><i class="glyphicon glyphicon-heart"></i> {{achievement.likes.length}} likes </span></li>
+								<li>|</li>
+								<li><span><i class="glyphicon glyphicon-comment"></i> {{achievement.comments.length}} comments</span></li>
+							</ul>
+	  					</div>
+                        <br>
+                    </div> <!--end of media-->
+				</div>
+			</div>
+			<pagination ng-if="viewAchievementsCtrl.pagination.numPages > 1" total-items="viewAchievementsCtrl.pagination.totalItems" ng-model="viewAchievementsCtrl.pagination.page" items-per-page="viewAchievementsCtrl.pagination.itemsPerPage" max-size="viewAchievementsCtrl.pagination.maxSize" boundary-links="{{viewAchievementsCtrl.pagination.numPages > 2}}" rotate="false" num-pages="viewAchievementsCtrl.pagination.numPages" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" ng-change="viewAchievementsCtrl.pageChanged()"></pagination>
+		</div>
+
+		<div class="col-md-4 col-sm-4">
+			<button ui-sref="add-achievement" class="btn btn-primary btn-add" type="submit">Post an Achievement</button>
+			 <h4>category</h4>
+		</div>
+
+		<!--
+		<ul class="timeline" infinite-scroll="viewAchievementsCtrl.nextPage()" infinite-scroll-disabled="viewAchievementsCtrl.busy" infinite-scroll-distance="1">
+			<li ng-class="{'timeline-inverted': $index%2 == 1}" ng-repeat="achievement in viewAchievementsCtrl.achievements">
+
+				<div class="timeline-badge primary"><a><i class="glyphicon glyphicon-record {'invert': $index%2 == 1}" id=""></i></a></div>
+				<div class="timeline-panel">
+					<div class="timeline-heading">
+              			<img class="img-responsive" src="http://lorempixel.com/1600/500/sports/2" />
+            		</div>
+
+            		<div class="timeline-body">
+		              <p>{{achievement.description}}</p>
+		            </div>
+
+		            <div class="timeline-footer">
+		                <a><i class="glyphicon glyphicon-thumbs-up"></i></a>
+		                <a><i class="glyphicon glyphicon-share"></i></a>
+		                <a class="pull-right">Continuar Lendo</a>
+		            </div>
+				</div>
+			</li>
+		</ul>
+		-->
+	</div>
+</div>

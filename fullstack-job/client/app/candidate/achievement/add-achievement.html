@@ -1,0 +1,55 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+
+<div id="add-achievement" class =" container">
+	<div class="row">
+		<div class="col-md-12 col-sm-12">
+			<div class="basic-info-panel">
+				<div class="basic-info-header">What you have achieved *</div>
+
+				<form name="form" novalidate>
+
+
+					<div class="tight form-group row">
+						<div class="col-sm-3 col-md-3 text-sm-min-right">
+				  			<label for="description" class="input-label">Description</label>
+				  		</div>
+				  		<div class="col-sm-6 col-md-6">
+				  			<textarea  class="form-control" rows="10" name="description" id="description" placeholder="Enter achievement description, e.g. how do you make it" ng-model="addAchievementCtrl.achievement.description" required></textarea>
+				  		</div>
+					</div>
+
+					<div class="basic-info-header">Skills needed *</div>
+
+
+					<div class="tight form-group row" ng-repeat="skill in addAchievementCtrl.achievement.skills" ng-model="addAchievementCtrl.achievement.skills">
+						<div class="col-sm-3 col-md-3 text-sm-min-right">
+						</div>
+						<div class="col-sm-3 col-md-3 text-sm-min-right">
+				  			<input type="text" class="form-control" name="skillname" id="skillname" placeholder="Enter skill name" ng-model="skill.name" />
+				  		</div>
+				  		<div class="col-sm-3 col-md-3">
+				  			<input type="text" class="form-control" name="learntime" id="learntime" placeholder="How long it takes to learn" ng-model="skill.learntime" />
+				  		</div>
+				  		<div class="col-sm-3 col-md-3">
+				  			<input type="text" class="form-control" name="learntime" id="learntime" placeholder="any web link to learn " ng-model="skill.link"/>
+				  		</div>
+					</div>
+					<div class="tight form-group row">
+						<div class="col-sm-3 col-md-3 text-sm-min-right">
+						</div>
+						<div class="col-sm-3 col-md-3 text-sm-min-right">
+							<button ng-click="addAchievementCtrl.addkill()" class="btn btn-primary pull-left" type="submit">Add a Skill</button>
+						</div>
+					</div>
+
+					<hr class="hr-sub">
+					<button ng-click="addAchievementCtrl.save(form)" class="btn btn-primary pull-right btn-squre" type="submit">Save</button>
+
+				</form>
+			</div>
+
+		</div>
+
+	</div>
+</div>

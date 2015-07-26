@@ -1,0 +1,24 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div id="add-resume" class ="container-fluid">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+			</div>
+
+			<div class="basic-info-panel">
+				<div class="basic-info-header">1. Post resume for free</div>
+
+				<form name="form" novalidate>
+					<div class="input-container">
+     	 				<label for="jobtype" class="input-label">Job Type <sup>*</sup></label>
+      					<input type="jobtype" id="jobtype" name="jobtype" class="form-control" placeholder="Enter job type" ng-model="addResumeCtrl.resume.jobtype" required>
+   					</div>
+
+   					<button ng-click="addResumeCtrl.save(form)" class="btn btn-primary" type="submit">Submit</button>
+
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,62 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div id="jobs" class ="container-fluid">
+	<div class="container-fluid">
+		<div class="col-xs-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">My Resume</div>
+				<div class="panel-body">
+					<form name="form" novalidate>
+						<dt>Name</dt>
+	            		<input type="name" id="name" name="name" class="form-control" placeholder="Enter name" ng-model="candidateProfileCtrl.user._candidateProfile.name" required>
+            		<form>
+            		<button ng-click="candidateProfileCtrl.update(form)" class="btn btn-primary" type="submit">Update</button>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xs-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">saved job</div>
+				<div class="panel-body">
+					<!-- Table -->
+	          		<div class="table-responsive">
+	          			<table class="table table-bordered table-striped table-hover table-condensed">
+	          				<thead>
+	          					<tr>
+	          						<th>
+	          							Job Name
+	          						</th>
+	          						<th>
+	          							Salary
+	          						</th>
+	          						<th>
+	          							Company
+	          						</th>
+	          						<th>
+	          							Benefits
+	          						</th>
+	          						<th>
+	          							Post Date
+	          						</th>
+	          					</tr>
+	          				</thead>
+	          				<tbody>
+	          					<tr ui-sref="jobdetail({jobId: job._id})" ng-repeat="job in candidateProfileCtrl.collectjobs">
+	          						<td ng-bind="job.jobname"></td>
+	          						<td ng-bind="job.salary"></td>
+	          						<td ng-bind="job.email"></td>
+	          						<td ng-bind="job.benefits"></td>
+	          						<td ng-bind="job.createtime"></td>
+
+	          					</tr>
+	          				</tbody>
+	          			</table>
+	          		</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

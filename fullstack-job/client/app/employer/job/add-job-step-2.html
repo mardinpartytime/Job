@@ -1,0 +1,55 @@
+<div class="basic-info-panel">
+  <div class="basic-info-header">2. Fill Information</div>
+
+  <form name="form" novalidate>
+
+    <div class="tight form-group row">
+      <div class="col-sm-3 col-md-3 text-sm-min-right">
+        <label for="description" class="input-label">Description*</label>
+      </div>
+      <div class="col-sm-6 col-md-6">
+        <textarea  class="form-control" rows="10" name="description" id="description" placeholder="Enter job requirements... TODO later" ng-model="employerAddJobCtrl.job.description" required></textarea>
+      </div>
+    </div>
+
+    <div class="tight form-group row">
+      <div class="col-sm-3 col-md-3 text-sm-min-right">
+        <label for="companyname" class="input-label">Email*</label>
+      </div>
+      <div class="col-sm-6 col-md-6">
+        <input type="text" class="form-control" name="email" id="email" placeholder="e.g. employer@job.com" ng-model="employerAddJobCtrl.job.email" required>
+        <label for="companyname" class="sub-label">Candidates' application will de directed to your email ( it will not be disclosed to candidates )</label>
+      </div>
+      <div class="col-sm-3 col-md-3 ">
+        <label for="companyname" class="important-label">recommend</label>
+      </div>
+    </div>
+
+    <div class="tight form-group row">
+      <div class="col-sm-3 col-md-3 text-sm-min-right">
+        <label for="applylink" class="input-label">weblink</label>
+      </div>
+      <div class="col-sm-6 col-md-6">
+        <input type="text" class="form-control" name="applylink" id="applylink" placeholder="e.g. www.job.com/joblink" ng-model="employerAddJobCtrl.job.applylink">
+        <label for="applylink" class="sub-label">The application link for this job if you already have a webpage</label>
+      </div>
+    </div>
+
+    <button ng-click="employerAddJobCtrl.save(form)" class="btn btn-primary pull-right btn-squre" type="submit">Continue</button>
+    <!--
+  	<div class="input-container">
+      <label for="jobname" class="input-label">Job Name <sup>*</sup></label>
+      <input type="jobname" id="jobname" name="jobname" class="form-control" placeholder="Enter job name" ng-model="employerAddJobCtrl.job.jobname" required>
+    </div>
+
+    <div class="input-container">
+      <label for="vacancynum" class="input-label">Hiring: </label>
+      <input type="vacancynum" id="vacancynum" name="vacancynum" class="form-control" placeholder="Enter job name" ng-model="employerAddJobCtrl.job.vacancynum">
+      <label for="vacancynum" class="input-label">people </label>
+    </div>
+
+    <button ng-click="employerAddJobCtrl.save(form)" class="btn btn-primary" type="submit">Save</button>
+  -->
+
+  </form>
+</div>

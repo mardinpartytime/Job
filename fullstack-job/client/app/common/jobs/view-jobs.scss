@@ -1,0 +1,94 @@
+
+#jobs, #job, #achievements {
+  .glyphicon-user {
+    font-size: 16px;
+  }
+  .panel-title {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .panel-body {
+    border-color: #ff0000;
+  }
+  .listing-pagination {
+    margin: 20px;
+  }
+  .product-header {
+    font-size: 18px;
+    font-weight: bold;
+    background: #F0F0F0;
+    color: black;
+    padding: 10px 15px;
+  }
+  .product-info-panel {
+    padding: 25px 50px;
+  }
+  .input-container {
+    margin: 20px;
+  }
+
+  .btn-container {
+    margin-bottom: 20px;
+  }
+  .btn-add {
+    margin: 0px;
+  }
+
+  .btn-padding {
+    margin: 0px 12px;
+  }
+
+
+  .drop-box {
+    background: #F8F8F8;
+    border: 5px dashed #DDDDDD;
+    width: auto;
+    height: auto;
+    text-align: center;
+    padding: 25px;
+    margin: 10px;
+  }
+
+  .dragover {
+    border: 5px dashed #333333;
+  }
+
+  .input-group {
+    max-width: 200px;
+  }
+
+  .district {
+    font-weight: normal;
+  }
+  .content-section {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    border-radius: 2px;
+    border: 1px solid rgba(99,99,99,0.2);
+    color: #595959;
+    margin: 10px 0px;
+  }
+  .content-header {
+    padding: 0px 12px;
+  }
+  .content-body {
+    padding: 0px 12px;
+    margin-bottom: 12px;
+  }
+  .hr-sub {
+    margin: 12px 12px;
+  }
+  .job-feature-key {
+    display: inline-block;
+    text-transform: capitalize;
+  }
+  .img-40px {
+    min-height: 40px;
+    height: 40px;
+    min-width: 40px;
+    width: 40px;
+  }
+  .header-5px {
+    margin: 0 0 5px;
+  }
+}

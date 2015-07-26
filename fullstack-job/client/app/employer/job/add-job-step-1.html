@@ -1,0 +1,40 @@
+<div class="basic-info-panel">
+  <div class="basic-info-header">1. Job information</div>
+
+  <form name="form" novalidate>
+  	<div class="tight form-group row">
+  		<div class="col-sm-3 col-md-3 text-sm-min-right">
+  			<label for="jobname" class="input-label">Job Name*</label>
+  		</div>
+  		<div class="col-sm-6 col-md-6">
+  			<input type="text" class="form-control" name="jobname" id="jobname" placeholder="Enter Job title" ng-model="employerAddJobCtrl.job.jobname" required>
+  		</div>
+  	</div>
+
+  	<div class="tight form-group row">
+  		<div class="col-sm-3 col-md-3 text-sm-min-right">
+  			<label for="jobname" class="input-label">District*</label>
+  		</div>
+  		<div class="col-sm-6 col-md-6">
+  			<input type="text" class="form-control" name="district" id="district" placeholder="Enter district" ng-model="employerAddJobCtrl.job.district" required>
+  		</div>
+  	</div>
+
+  	<div class="tight form-group row">
+  		<div class="col-sm-3 col-md-3 text-sm-min-right">
+  			<label for="companyname" class="input-label">Company*</label>
+  		</div>
+  		<div class="col-sm-6 col-md-6">
+  			<input type="text" class="form-control" name="companyname" id="companyname" placeholder="Enter company name" ng-model="employerAddJobCtrl.job.companyname" required>
+  		</div>
+  	</div>
+  	<!--
+  	<div class="input-container">
+      <label for="jobname" class="input-label">Job Name*</label>
+      <input type="text" class="form-control" name="jobname" id="jobname" placeholder="Enter Job title" ng-model="employerAddJobCtrl.job.jobname" required>
+    </div>
+	-->
+    <button ng-click="employerAddJobCtrl.commitStep1(form)" class="btn btn-primary pull-right btn-squre" type="submit">Continue</button>
+
+  </form>
+</div>

@@ -1,0 +1,58 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div id="resumes" class ="container-fluid">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+			</div>
+
+               <div class="btn-container text-right">
+                    <button ui-sref="add-resume" class="btn btn-default btn-add" type="submit">Post a Resume(free)</button>
+                </div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+            		<h3 class="panel-title">Job Listing</h3>
+          		</div>
+
+          		<!-- Table -->
+          		<div class="table-responsive">
+          			<table class="table table-bordered table-striped table-hover table-condensed">
+          				<thead>
+          					<tr>
+          						<th>
+          							Name
+          						</th>
+          						<th>
+          							Gender
+          						</th>
+          						<th>
+          							education
+          						</th>
+          						<th>
+          							Job Type
+          						</th>
+          						<th>
+          							experience
+          						</th>
+
+          					</tr>
+          				</thead>
+
+          				<tbody>
+          					<tr ng-repeat="resume in viewResumesCtrl.resumes">
+          						<td ng-bind="resume.name"></td>
+          						<td ng-bind="resume.gender"></td>
+          						<td ng-bind="resume.education"></td>
+          						<td ng-bind="resume.jobtype"></td>
+          						<td ng-bind="resume.experience"></td>
+          					</tr>
+          				</tbody>
+          			</table>
+          		</div>
+			</div>
+
+			<pagination ng-if="viewResumesCtrl.pagination.numPages > 1" total-items="viewResumesCtrl.pagination.totalItems" ng-model="viewResumesCtrl.pagination.page" items-per-page="viewResumesCtrl.pagination.itemsPerPage" max-size="viewResumesCtrl.pagination.maxSize" boundary-links="{{viewResumesCtrl.pagination.numPages > 2}}" rotate="false" num-pages="viewResumesCtrl.pagination.numPages" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" ng-change="viewResumesCtrl.pageChanged()"></pagination>
+		</div>
+	</div>
+</div>
