@@ -16,6 +16,8 @@ var JobSchema = new Schema({
   lon: Number,
   lat: Number,
   address: String,
+  city: String,
+  district: String,
   contact: String,
   phone: String,
   email: String,
@@ -23,7 +25,8 @@ var JobSchema = new Schema({
   workinghour: String,
   weight: Number,
   createtime: Date,
-  _employer:{type: String, ref: 'Employer'}
+  applylink: String,
+  _employer:{type: String, ref: 'User'}
 });
 
 module.exports = mongoose.model('Job', JobSchema);

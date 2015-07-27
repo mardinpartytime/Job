@@ -26,7 +26,7 @@ exports.index = function(req, res) {
 exports.create = function (req, res, next) {
   var newUser = new User(req.body);
   newUser.provider = 'local';
-  newUser.role = 'user';
+  //newUser.role = 'user';
   newUser.save(function(err, user) {
     if (err) return validationError(res, err);
     var token = jwt.sign({_id: user._id }, config.secrets.session, { expiresInMinutes: 60*5 });
@@ -82,16 +82,27 @@ exports.changePassword = function(req, res, next) {
 /**
  * Get my info
  */
-exports.me = function(req, res, next) {
+ exports.me = function(req, res, next) {
   var userId = req.user._id;
   User.findOne({
     _id: userId
-  }, '-salt -hashedPassword', function(err, user) { // don't ever give out the password or salt
+  }, '-salt -hashedPassword')
+  .populate('_employerProfile _candidateProfile')
+  .exec(function (err, user) {
     if (err) return next(err);
     if (!user) return res.json(401);
-    res.json(user);
+
+    User.populate(user, {
+      path: '_candidateProfile._collectjobs',
+      model: 'Job'
+    }, function (err, resultuser) {
+      if (err) return next(err);
+      res.json(resultuser);
+    });
+    
   });
 };
+
 
 /**
  * Authentication callback

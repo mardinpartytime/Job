@@ -2,8 +2,12 @@
 
 var express = require('express');
 var controller = require('./candidate.controller');
+var auth = require('../../auth/auth.service');
 
 var router = express.Router();
+
+router.post('/', controller.create); //need to as sms authentication function
+router.put('/:id', auth.hasRole(['admin','candidate']), controller.update);
 /*
 router.get('/', controller.index);
 router.get('/:id', controller.show);

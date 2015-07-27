@@ -7,7 +7,8 @@ var CandidateSchema = new Schema({
   name: String,
   gender: String, 
   education: String,
-  experience: String
+  experience: String,
+  _collectjobs: [{type:String, ref: 'Job'}]
 });
 
 module.exports = mongoose.model('Candidate', CandidateSchema);

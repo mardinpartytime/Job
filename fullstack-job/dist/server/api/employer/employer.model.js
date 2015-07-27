@@ -9,8 +9,12 @@ var EmployerSchema = new Schema({
   lat: Number,
   address: String,
   contact: String,
-  level: Number
-
+  level: Number,
+  size: String,
+  type: String, //goverment, charity
+  revenue: String,
+  founded: Date,
+  website: String
 });
 
 module.exports = mongoose.model('Employer', EmployerSchema);

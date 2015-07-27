@@ -12,10 +12,12 @@ module.exports = function(app) {
   app.use('/api/things', require('./api/thing'));
   app.use('/api/users', require('./api/user'));
 
-  app.use('/api/candidate', require('./api/candidate'));
-  app.use('/api/employer', require('./api/employer'));
-  app.use('/api/job', require('./api/job'));
-  app.use('/api/resume', require('./api/resume'));
+  app.use('/api/candidates', require('./api/candidate'));
+  app.use('/api/employers', require('./api/employer'));
+  app.use('/api/jobs', require('./api/job'));
+  app.use('/api/resumes', require('./api/resume'));
+  app.use('/api/achievements', require('./api/achievement'));
+  app.use('/api/comments', require('./api/comment'));
 
   app.use('/auth', require('./auth'));
   
