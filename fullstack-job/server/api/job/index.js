@@ -13,6 +13,9 @@ router.put('/:id', auth.hasRole(['admin', 'employer']), controller.update);
 router.delete('/:id', auth.hasRole(['admin', 'employer']), controller.destroy);
 router.get('/:id/collect', auth.hasRole(['candidate']), controller.collect);
 router.get('/:id/recollect', auth.hasRole(['candidate']), controller.recollect);
+
+
+
 /*
 router.get('/', controller.index);
 router.get('/:id', controller.show);
